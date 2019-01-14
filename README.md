@@ -28,4 +28,4 @@ And following instructions are only for Mac OS X and IntelliJ IDEA IDE, sorry.
 
 <a href="#media-sample-kotlin">Back to top</a>
 
-The MIT License (MIT).
+The MIT License (MIT 2019).
