@@ -16,13 +16,13 @@ And following instructions are only for Mac OS X and IntelliJ IDEA IDE, sorry.
 
 ## Usage
 
-`As with this projects, you must have JDK 1.8 or heigher installed.`
+*As with this projects, you must have JDK 1.8 or heigher installed.*
 
-First of all, you need to run gradle task `build/build`.
+* First of all, you need to run gradle task `build/build`.
 
-Next you need to run gradle task `application/bootRun`.
+* Next you need to run gradle task `application/bootRun`.
 
-Now you can visit [localhost:9000](localhost:8081) from your browser.
+* Now you can visit [localhost:9000](localhost:8081) from your browser.
 
 ## Licence
 
