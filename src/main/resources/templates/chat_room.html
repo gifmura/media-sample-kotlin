@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>chat_room</title>
+</head>
+<body>
+<h1>Messages</h1>
+<table class="messages">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Content</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="message:${messages}">
+        <td th:text="${message.id}"></td>
+        <td th:text="${message.content}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
