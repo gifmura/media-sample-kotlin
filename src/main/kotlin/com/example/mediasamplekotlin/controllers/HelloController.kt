@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.ResponseBody
 
+/*
+ * This controller exists for health check.
+ */
 @Controller
 class HelloController{
 
-    @RequestMapping(value = ["/"], method = [RequestMethod.GET])
+    @RequestMapping(value = ["/hello"], method = [RequestMethod.GET])
     @ResponseBody
     fun helloWorld(): String {
         return "Hello, World!"
