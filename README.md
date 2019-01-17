@@ -1,5 +1,7 @@
 # media-sample-kotlin
 
+> This project is under development.
+
 This is a sample project for developers interested in Kotlin and Spring Boot.
 
 This project is featuring basic CRUD by a simple chat app.
