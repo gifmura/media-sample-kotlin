@@ -2,6 +2,8 @@
 
 This is a sample project for developers interested in Kotlin and Spring Boot.
 
+This project is featuring basic CRUD by a simple chat app.
+
 ## Environment
 
 * Kotlin version = '1.2.71'
@@ -11,18 +13,46 @@ This is a sample project for developers interested in Kotlin and Spring Boot.
 
 This project is intended to be used on Mac OS X or Linux.
 
-And following instructions are only for Mac OS X and IntelliJ IDEA IDE, sorry.
+And following instructions are only for Mac OS X and IntelliJ IDEA, sorry.
 
 
 ## Usage
 
 *As with this projects, you must have JDK 1.8 or heigher installed.*
 
-* First of all, you need to run gradle task `build/build`.
+First of all, you need to install MySQL.
 
-* Next you need to run gradle task `application/bootRun`.
+```bash
+brew install mysql
+mysql.server start
+```
 
-* Now you can visit [localhost:9000](localhost:8081) from your browser.
+And you need to create db user `sampleuser` with password `changeme` like below.
+
+```bash
+CREATE USER 'sampleuser'@'localhost' IDENTIFIED by 'changeme';
+GRANT ALL PRIVILEGES ON *.* TO 'sampleuser'@'localhost';
+```
+
+And you also need to create db `springdb` and table `message` like below.
+
+```bash
+CREATE DATABASE springdb;
+
+use springdb;
+
+CREATE TABLE `message` (
+  `id`          BIGINT       NOT NULL AUTO_INCREMENT,
+  `content`     VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+```
+
+Next you need to run gradle task `build/build`.
+
+After that, you need to run gradle task `application/bootRun`.
+
+Now you can visit [localhost:9000](localhost:8081) from your browser.
 
 ## Licence
 
