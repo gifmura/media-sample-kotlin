@@ -7,6 +7,5 @@ import org.springframework.boot.runApplication
 class MediaSampleKotlinApplication
 
 fun main(args: Array<String>) {
-	runApplication<MediaSampleKotlinApplication>(*args)
+    runApplication<MediaSampleKotlinApplication>(*args)
 }
-
