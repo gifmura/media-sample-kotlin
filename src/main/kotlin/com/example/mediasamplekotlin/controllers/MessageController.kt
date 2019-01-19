@@ -1,7 +1,7 @@
 package com.example.mediasamplekotlin.controllers
 
-import com.example.mediasamplekotlin.model.Message
-import com.example.mediasamplekotlin.model.MessageRepository
+import com.example.mediasamplekotlin.Entity.Message
+import com.example.mediasamplekotlin.Repository.MessageRepository
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
@@ -11,16 +11,16 @@ import javax.validation.Valid
  * This controller featuring a basic CRUD.
  */
 @Controller
-class ChatController(private val messageRepository: MessageRepository){
+class MessageController(private val messageRepository: MessageRepository) {
 
     @GetMapping("/")
-    fun index(): ModelAndView {return messages()}
+    fun index(): ModelAndView { return list() }
 
     /**
      * READ
      */
-    @RequestMapping("/users")
-    fun messages(): ModelAndView = ModelAndView("/").apply { addObject("messages", messageRepository.findAll()) }
+    @RequestMapping("/list")
+    fun list(): ModelAndView = ModelAndView("/chat_room").apply { addObject("messages", messageRepository.findAll()) }
 
     /**
      * CREATE
@@ -33,7 +33,7 @@ class ChatController(private val messageRepository: MessageRepository){
      * UPDATE
      */
     @PostMapping("/update")
-    fun update(@Valid @RequestBody message: Message): Message {return post(message)}
+    fun update(@Valid @RequestBody message: Message): Message { return post(message) }
 
     /**
      * DELETE
