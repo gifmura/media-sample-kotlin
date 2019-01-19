@@ -17,11 +17,6 @@ This project is intended to be used on Mac OS X or Linux.
 
 And following instructions are only for Mac OS X and IntelliJ IDEA, sorry.
 
-## References
-
-*Spring Security*
-* https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html
-
 ## Usage
 
 *As with this projects, you must have JDK 1.8 or heigher installed.*
@@ -60,7 +55,14 @@ After that, you need to run gradle task `application/bootRun`.
 
 Now you can visit [localhost:8081](localhost:8081) from your browser.
 
-## 
+## References
+
+*Spring Security*
+* https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html
+
+*ktlint*
+* https://github.com/shyiko/ktlint
+
 
 ## Licence
 
