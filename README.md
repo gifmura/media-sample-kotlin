@@ -4,7 +4,7 @@
 
 This is a sample project for developers interested in Kotlin and Spring Boot.
 
-This project is featuring basic CRUD by a simple chat app.
+This project is featuring server-side development using Kotlin.
 
 ## Environment
 
@@ -17,6 +17,10 @@ This project is intended to be used on Mac OS X or Linux.
 
 And following instructions are only for Mac OS X and IntelliJ IDEA, sorry.
 
+## References
+
+*Spring Security*
+* https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html
 
 ## Usage
 
@@ -55,6 +59,8 @@ Next you need to run gradle task `build/build`.
 After that, you need to run gradle task `application/bootRun`.
 
 Now you can visit [localhost:9000](localhost:8081) from your browser.
+
+## 
 
 ## Licence
 
