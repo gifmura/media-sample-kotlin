@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody
  * This controller exists for health check.
  */
 @Controller
-class HelloController{
+class HelloController {
 
     @RequestMapping(value = ["/hello"], method = [RequestMethod.GET])
     @ResponseBody
