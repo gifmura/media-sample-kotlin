@@ -36,8 +36,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("user").roles("USER")
+                .withUser("user").password("{noop}user").roles("USER")
                 .and()
-                .withUser("admin").password("admin").roles("ADMIN")
+                .withUser("admin").password("{noop}admin").roles("ADMIN")
     }
 }
