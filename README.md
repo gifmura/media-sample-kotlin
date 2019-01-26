@@ -82,7 +82,7 @@ Next you need to run gradle task `build/build`.
 
 After that, you need to run gradle task `application/bootRun`.
 
-Now you can visit [localhost:8081](localhost:8081) from your browser.
+Now you can visit [localhost:8081](http://localhost:8081) from your browser.
 
 ## References
 
