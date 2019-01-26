@@ -13,7 +13,7 @@ import javax.transaction.Transactional
 
 @Service
 @Transactional
-class UserDetailServiceImpl: UserDetailsService {
+class UserDetailServiceImpl : UserDetailsService {
 
     @Autowired
     lateinit var userRepo: UserRepository
@@ -21,11 +21,11 @@ class UserDetailServiceImpl: UserDetailsService {
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(email: String): UserDetails {
         val user: User = userRepo!!.findByEmail(email) ?: throw UsernameNotFoundException("Email $email not found")
-        return org.springframework.security.core.userdetails.User(user.email, user.password,getAuthorities(user))
+        return org.springframework.security.core.userdetails.User(user.email, user.password, getAuthorities(user))
     }
 
     private fun getAuthorities(user: User): Collection<GrantedAuthority> {
-        val userRoles = user.roles.stream().map{ role -> role.name }.toArray<String>{ length -> arrayOfNulls(length) }
+        val userRoles = user.roles.stream().map { role -> role.name }.toArray<String> { length -> arrayOfNulls(length) }
         return AuthorityUtils.createAuthorityList(*userRoles)
     }
 }

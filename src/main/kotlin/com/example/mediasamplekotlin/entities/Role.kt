@@ -11,7 +11,7 @@ data class Role(
 
     @get: NotBlank
     val name: String = ""
-){
+) {
     companion object {
         const val USER: String = "USER"
         const val ADMIN: String = "ADMIN"

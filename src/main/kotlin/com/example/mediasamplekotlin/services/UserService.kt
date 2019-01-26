@@ -17,7 +17,7 @@ class UserService @Autowired constructor(
     fun findByEmail(email: String): User? = userRepo.findByEmail(email)
 
     @Throws(RuntimeException::class)
-    fun saveAdminUser(user: User):Unit {
+    fun saveAdminUser(user: User) {
         val role = roleRepo.findByName(Role.ADMIN) ?: throw RuntimeException("undefined role was called.")
         user.roles += listOf(role)
         user.password = BCryptPasswordEncoder().encode(user.password)
@@ -25,7 +25,7 @@ class UserService @Autowired constructor(
     }
 
     @Throws(RuntimeException::class)
-    fun saveUser(user: User):Unit {
+    fun saveUser(user: User) {
         val role = roleRepo.findByName(Role.USER) ?: throw RuntimeException("undefined role was called.")
         user.roles += listOf(role)
         user.password = BCryptPasswordEncoder().encode(user.password)

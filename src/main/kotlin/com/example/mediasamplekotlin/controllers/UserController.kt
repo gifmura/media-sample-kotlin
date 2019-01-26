@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 
-
-
 /**
  * authorization controller.
  */
@@ -31,13 +29,13 @@ class UserController @Autowired constructor(private val userService: UserService
      * post request user registration.
      */
     @RequestMapping(value = "/signup", method = [RequestMethod.POST])
-    fun signup(@ModelAttribute("userForm") userForm: User, bindingResult: BindingResult, model: Model):String{
+    fun signup(@ModelAttribute("userForm") userForm: User, bindingResult: BindingResult, model: Model): String {
         if (bindingResult.hasErrors()) {
-            return "signup";
+            return "signup"
         }
-        try{
+        try {
             userService.saveUser(userForm)
-        } catch(e: Exception) {
+        } catch (e: Exception) {
             return "error_417"
         }
         return "login"

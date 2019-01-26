@@ -58,7 +58,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     }
 
     @Bean
-    fun getPasswordEncoder(): PasswordEncoder{
+    fun getPasswordEncoder(): PasswordEncoder {
         return BCryptPasswordEncoder()
     }
 
@@ -78,5 +78,4 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
         tokenRepositoryImpl.setDataSource(dataSource)
         return tokenRepositoryImpl
     }
-
 }

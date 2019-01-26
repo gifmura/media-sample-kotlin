@@ -12,7 +12,7 @@ data class User(
     val id: Long = 0,
 
     @get: NotBlank
-    @Email(message="{errors.invalid_email}")
+    @Email(message = "{errors.invalid_email}")
     val email: String = "",
 
     @get: NotBlank
