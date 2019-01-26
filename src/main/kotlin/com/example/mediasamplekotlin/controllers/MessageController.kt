@@ -1,7 +1,7 @@
 package com.example.mediasamplekotlin.controllers
 
-import com.example.mediasamplekotlin.Entity.Message
-import com.example.mediasamplekotlin.Repository.MessageRepository
+import com.example.mediasamplekotlin.entities.Message
+import com.example.mediasamplekotlin.repositories.MessageRepository
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
@@ -19,7 +19,7 @@ class MessageController(private val messageRepository: MessageRepository) {
     /**
      * READ
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list", method = [RequestMethod.GET])
     fun list(): ModelAndView = ModelAndView("/chat_room").apply { addObject("messages", messageRepository.findAll()) }
 
     /**
