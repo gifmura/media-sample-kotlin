@@ -2,9 +2,15 @@
 
 > This project is under development.
 
-This is a sample project for developers interested in Kotlin and Spring Boot.
+This is a sample project for developers interested in server-side development with Kotlin.
 
-This project is featuring server-side development using Kotlin.
+This project is featuring some basic and general topics like below:
+
+* authentication (Spring-Security)
+* many to many relationship (JPA)
+* role-based access control
+* service layer
+* rest api
 
 ## Environment
 
@@ -35,7 +41,7 @@ CREATE USER 'sampleuser'@'localhost' IDENTIFIED by 'changeme';
 GRANT ALL PRIVILEGES ON *.* TO 'sampleuser'@'localhost';
 ```
 
-And you also need to create db `springdb` and table `message` like below.
+And you also need to create db `springdb` and some tables like below.
 
 ```bash
 CREATE DATABASE springdb;
@@ -46,6 +52,29 @@ CREATE TABLE `message` (
   `id`          BIGINT       NOT NULL AUTO_INCREMENT,
   `content`     VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `user` (
+  `id`          BIGINT       NOT NULL AUTO_INCREMENT,
+  `email`       VARCHAR(255) NOT NULL,
+  `password`    VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE (`email`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `role` (
+  `id`          BIGINT       NOT NULL AUTO_INCREMENT,
+  `name`        VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE (`name`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `user_role` (
+  `user_id`     BIGINT       NOT NULL,
+  `role_id`     BIGINT       NOT NULL,
+  PRIMARY KEY (`user_id`, `role_id`),
+  FOREIGN KEY (user_id) REFERENCES user (`id`),
+  FOREIGN KEY (role_id) REFERENCES role (`id`)
 ) ENGINE=InnoDB;
 ```
 
