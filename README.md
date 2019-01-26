@@ -2,9 +2,15 @@
 
 > This project is under development.
 
-This is a sample project for developers interested in Kotlin and Spring Boot.
+This is a sample project for developers interested in server-side development with Kotlin.
 
-This project is featuring server-side development using Kotlin.
+This project is featuring some basic and general topics like below:
+
+* authentication (Spring-Security)
+* many to many relationship (JPA)
+* role-based access control
+* service layer
+* rest api
 
 ## Environment
 
