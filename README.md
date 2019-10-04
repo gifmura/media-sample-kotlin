@@ -1,7 +1,5 @@
 # media-sample-kotlin
 
-> This project is under development.
-
 This is a sample project for developers interested in server-side development with Kotlin.
 
 This project is featuring some basic and general topics like below:
